@@ -1,72 +1,102 @@
-# F1 Streetwear E-commerce Prototype
+# 3D Solar System Simulation
 
-This is a working prototype of a minimal e-commerce experience for an F1-inspired streetwear brand, focusing on structure, UX clarity, and smart time use.
+A mobile-responsive web application that simulates the solar system in 3D using Three.js.
 
-## Project Overview
+## Features
 
-The prototype demonstrates a complete e-commerce flow including:
+### Core Features
+- Interactive 3D solar system with the Sun at the center
+- All 8 planets (Mercury to Neptune) with realistic relative sizes and distances
+- Individual planet rotation and orbital animation
+- Real-time speed control for each planet
+- Realistic lighting and camera positioning
+- Mobile-responsive design
 
-- Home page with category navigation
-- Product browsing by category
-- Product detail pages with search functionality
-- Shopping cart with quantity adjustment
-- Authentication system with login, signup, and password recovery
-- Data capture to Google Sheets
-
-## Pages & Flows
-
-### 1. Home Page
-- Hero section with "View All" button
-- Category section with 5+ categories
-- Featured products section
-
-### 2. Category Page (Tees)
-- Grid of products with images
-- Search functionality with empty state handling
-- Sorting options
-
-### 3. Product Page
-- Product details and images
-- Size and quantity selection
-- Add to cart functionality
-
-### 4. Cart Page
-- List of added items
-- Quantity adjustment
-- Subtotal calculation
-- Checkout CTA
-
-### 5. Authentication Pages
-- Login Page
-- Sign Up Page
-- Forgot Password Page with OTP via Email
-- Data capture to Google Sheets
+### Bonus Features
+- Pause/Resume animation button
+- Background star field for immersive experience
+- Interactive camera controls (drag to rotate, scroll to zoom)
+- Keyboard shortcuts (Space = pause/resume, Ctrl+R = reset speeds)
+- Orbit visualization lines
+- Reset speeds button
 
 ## Technology Stack
 
-- HTML5
-- CSS3 (with responsive design)
-- JavaScript (vanilla)
-- Google Sheets API integration (simulated)
+- **Three.js**: 3D rendering library for creating the solar system
+- **Vanilla JavaScript**: Pure JS for DOM manipulation and user interactions
+- **HTML5 Canvas**: For rendering the 3D scene
+- **CSS3**: Responsive styling for UI elements
 
-## Design Philosophy
+## Project Structure
 
-- Clean, intuitive user interface
-- Clear navigation paths
-- Consistent styling across all components
-- Focus on essential e-commerce functionality
-- F1-inspired aesthetic elements
+```
+/
+├── index.html          # Main HTML file with canvas element
+├── css/
+│   └── styles.css      # Responsive styling
+├── js/
+│   ├── main.js         # Application entry point
+│   ├── solar-system.js # Three.js scene setup and planet creation
+│   ├── controls.js     # Speed control panel functionality
+│   └── utils.js        # Helper functions and planet data
+└── .gitignore          # Git ignore file
+```
 
-## How to Use
+## How to Run
 
-1. Open `index.html` in a web browser to view the home page
-2. Navigate through the site using the navigation links
-3. Test the product search on the category page
-4. Add products to cart and adjust quantities
-5. Test the authentication flows
+1. Clone the repository:
+   ```
+   git clone <repository-url>
+   cd solar-system-simulation
+   ```
 
-## Notes
+2. Open the project:
+   - Option 1: Open `index.html` directly in your browser
+   - Option 2: Use a local server (recommended for better performance)
+     ```
+     # Using Python
+     python -m http.server
+     
+     # Using Node.js (with http-server package)
+     npx http-server
+     ```
 
-- This is a front-end prototype only; no actual backend functionality is implemented
-- Google Sheets integration is simulated for demonstration purposes
-- Placeholder images are used throughout the prototype
+3. Access the application:
+   - If using a local server, navigate to `http://localhost:8000` (or the port shown in your terminal)
+
+## User Controls
+
+### Planet Speed Controls
+- Each planet has its own slider to adjust orbital speed from 0x to 5x
+- Speed changes take effect immediately
+
+### Main Controls
+- **Pause/Resume Button**: Stop or start all animations
+- **Reset Button**: Return all planet speeds to default (1x)
+
+### Mouse Controls
+- **Drag**: Rotate the camera around the solar system
+- **Scroll**: Zoom in and out
+
+### Keyboard Shortcuts
+- **Space**: Toggle pause/resume
+- **Ctrl+R**: Reset all planet speeds
+
+## Browser Compatibility
+
+This application works on all modern browsers with WebGL support:
+- Chrome (recommended)
+- Firefox
+- Safari
+- Edge
+
+## Performance Notes
+
+- For optimal performance, use a device with dedicated graphics
+- On mobile devices, the simulation may run at lower framerates
+- Reducing the number of stars or simplifying planet geometries can improve performance on lower-end devices
+
+## Credits
+
+- Planet data based on relative sizes and orbital characteristics
+- Three.js library for 3D rendering capabilities
