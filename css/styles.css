@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #000;
+    color: #fff;
+    overflow: hidden;
+}
+
+#container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+#solar-system-canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#control-panel {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 20px;
+    min-width: 280px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+#control-panel h3 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #ffd700;
+}
+
+.controls-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.planet-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.planet-control label {
+    min-width: 70px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.planet-control input[type="range"] {
+    flex: 1;
+    height: 6px;
+    background: #333;
+    border-radius: 3px;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.planet-control input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    background: #ffd700;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.planet-control input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: #ffd700;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+.speed-value {
+    min-width: 40px;
+    font-size: 12px;
+    color: #ffd700;
+    text-align: right;
+}
+
+.main-controls {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.main-controls button {
+    padding: 8px 16px;
+    background: #333;
+    color: #fff;
+    border: 1px solid #555;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.main-controls button:hover {
+    background: #555;
+}
+
+.main-controls button:active {
+    background: #222;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    #control-panel {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+        min-width: auto;
+        max-height: 60vh;
+        padding: 15px;
+    }
+    
+    .planet-control {
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+    
+    .planet-control label {
+        min-width: 60px;
+        font-size: 12px;
+    }
+    
+    .main-controls {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    #control-panel {
+        padding: 10px;
+    }
+    
+    .controls-grid {
+        gap: 8px;
+    }
+    
+    .planet-control input[type="range"] {
+        height: 8px;
+    }
+}
