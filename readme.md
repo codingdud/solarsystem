@@ -46,7 +46,7 @@ A mobile-responsive web application that simulates the solar system in 3D using 
 
 1. Clone the repository:
    ```
-   git clone <repository-url>
+   git clone https://github.com/codingdud/solarsystem.git
    cd solar-system-simulation
    ```
 
